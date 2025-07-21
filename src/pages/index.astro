@@ -1,7 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro';
+
+import Weather from '@/sections/weather.astro';
+
+const lat_solsona = 41.9939; // Solsona
+const lon_solsona = 1.5171;
+
+const lat_bcn = 41.3888;
+const lon_bcn = 2.159;
 ---
 
 <Layout>
 	<h1>Weather App by Pau Segués Vitutia</h1>
+	<Weather city="Solsona" lat={lat_solsona} lon={lon_solsona} />
+	<Weather city="Barcelona" lat={lat_bcn} lon={lon_bcn} />
 </Layout>
