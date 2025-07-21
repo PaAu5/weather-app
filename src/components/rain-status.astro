@@ -1,0 +1,12 @@
+---
+interface Props {
+    precipitation: number;
+    weatherStatus: string;
+}
+
+const { precipitation, weatherStatus } = Astro.props;
+---
+<div>
+    <p>🌧️ Precipitation: {precipitation} mm</p>
+    <p>Weather Status: {weatherStatus}</p>
+</div>

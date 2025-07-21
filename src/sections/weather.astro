@@ -1,0 +1,33 @@
+---
+import { getWeather } from '@/utils/getWeather';
+
+import Temperature from '@/components/temperature.astro';
+import RainStatus from '@/components/rain-status.astro';
+
+import { weatherTextMap } from '@/consts/weatherTextMap';
+
+interface Props {
+    city: string;
+    lat: number;
+    lon: number;
+}
+
+const { city, lat, lon } = Astro.props;
+
+const weather = await getWeather(lat, lon);
+
+const weatherDescription = weatherTextMap[weather.weatherCode] ?? "❓ Unknown";
+---
+<section>
+    <h2>Weather on {city}</h2>
+    {weather ? (
+      <div>
+        <Temperature current={weather.currentTemperature} min={weather.temperatureMin} max={weather.temperatureMax} />
+      </div>
+      <div>
+        <RainStatus precipitation={weather.precipitation} weatherStatus={weatherDescription} />
+      </div>
+    ) : (
+      <p>weather not found!</p>
+    )}
+</section>

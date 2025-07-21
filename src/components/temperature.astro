@@ -1,0 +1,14 @@
+---
+interface Props {
+    current: number;
+    min: number;
+    max: number;
+}
+
+const { current, min, max } = Astro.props;
+---
+<div>
+    <p>🌡️ Current temperature: {current}°C</p>
+    <p>🌡️ Minimum temperature: {min}°C</p>
+    <p>🌡️ Maximum temperature: {max}°C</p>
+</div>
