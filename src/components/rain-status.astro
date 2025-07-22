@@ -1,12 +1,33 @@
 ---
 interface Props {
     precipitation: number;
-    weatherStatus: string;
+    icon: string;
+    description: string;
 }
 
-const { precipitation, weatherStatus } = Astro.props;
+const { precipitation, icon, description } = Astro.props;
 ---
-<div>
-    <p>🌧️ Precipitation: {precipitation} mm</p>
-    <p>Weather Status: {weatherStatus}</p>
+<div class="flex flex-col">
+    <div class="flex flex-row justify-start items-center mb-4">
+            <h3 class="text-4xl">
+                {icon}
+            </h3>
+            <p>
+                {description}
+            </p>
+    </div>
+    {
+        precipitation > 0 && (
+            <div>
+                <p>🌧️ Precipitation: {precipitation} mm</p>
+            </div>
+        )
+    }
+    {
+        precipitation < 0.01 && (
+            <div>
+                <p>No precipitation expected.</p>
+            </div>
+        )
+    }
 </div>

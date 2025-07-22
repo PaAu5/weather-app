@@ -7,8 +7,39 @@ interface Props {
 
 const { current, min, max } = Astro.props;
 ---
-<div>
+<!-- <div>
     <p>🌡️ Current temperature: {current}°C</p>
     <p>🌡️ Minimum temperature: {min}°C</p>
     <p>🌡️ Maximum temperature: {max}°C</p>
+</div> -->
+
+
+<div class="flex flex-col justify-start items-start space-x-6">
+    <div class="flex flex-row justify-center items-center">
+        <h2 class="text-6xl font-bold">
+            {current} 
+        </h2>
+        <p class="text-5xl">
+            °C
+        </p>
+    </div>
+
+    <div>
+        <div class="flex flex-row space-x-2 items-center ">
+            <h3 class="text-lg">
+                Max
+            </h3>
+            <p class="font-bold text-lg">
+                {max}°C
+            </p>
+        </div>
+        <div class="flex flex-row space-x-2">
+            <h3 class="text-lg">
+                Min
+            </h3>
+            <p class="font-bold text-lg">
+                {min}°C
+            </p>
+        </div>
+    </div>
 </div>
