@@ -1,3 +1,6 @@
 export interface WeatherTextMap {
-  [key: number]: string;
+  [key: number]: {
+    description: string;
+    icon: string;
+  }
 }
