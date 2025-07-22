@@ -6,7 +6,11 @@ import Layout from '@/layouts/Layout.astro';
 	<h1>Weather App by Pau Segués Vitutia</h1>
 
 	<div>
-		<a href="/city/Solsona">Solsona</a>
-		<a href="/city/Barcelona">Barcelona</a>
+		<input type="text" id="searchInput" placeholder="Escribe para buscar..." />
+  		<button id="searchBtn">Buscar</button>
+
+		<ul id="results"></ul>
+
+		<script src="@/utils/search.ts"></script>
 	</div>
 </Layout>

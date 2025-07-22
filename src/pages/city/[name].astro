@@ -1,0 +1,24 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Weather from "@/sections/weather.astro";
+
+import { CITIES } from "@/consts/cities";
+
+export async function getStaticPaths() {
+  return CITIES.map(city => ({
+    params: { name: city.name }
+  }));
+}
+
+
+const { name } = Astro.params;
+const cityData = CITIES.find(city => city.name === name);
+
+if (!cityData) {
+  throw new Error(`Ciudad no encontrada: ${name}`);
+}
+---
+
+<Layout title="Weather App">
+    <Weather city={cityData.name} lat={cityData.lat} lon={cityData.lon} />
+</Layout>
