@@ -1,0 +1,25 @@
+---
+---
+<div class="flex flex-col justify-center items-center">
+	<div class="flex flex-col justify-start items-start">
+		<div class="flex flex-row space-x-4">
+			<input type="text" id="searchInput" placeholder="Escribe para buscar..." 
+                class="border-2 rounded-lg text-bright-gray placeholder-bright-gray placeholder:opacity-75
+                focus:outline-none focus:scale-110 px-2 text-xl"
+            />
+			<button id="searchBtn" 
+            class="text-bright-gray px-4 py-2 border-bright-gray border-2 cursor-pointer font-bold text-xl transition duration-400
+                hover:text-charleston-green hover:bg-bright-gray rounded-lg hover:scale-110">
+                Buscar
+            </button>
+		</div>
+
+		<div class="flex justify-start items-start">
+			<ul id="results" class="flex flex-col space-y-1 mt-4 text-xl
+			[&>li]:bg-charleston-green #31363F; [&>li]:hover:scale-105 [&>li]:text-center [&>li]:px-4 [&>li]:rounded-lg">
+            </ul>
+		</div>
+	</div>
+
+	<script src="@/utils/search.ts"></script>
+</div>

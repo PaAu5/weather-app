@@ -18,10 +18,11 @@ const weather = await getWeather(lat, lon);
 
 const weatherDescription = weatherTextMap[weather.weatherCode] ?? "❓ Unknown";
 ---
-<section class="flex flex-col justify-center items-center h-[100dvh]">
+<section class="flex flex-col justify-center items-center h-[80dvh]">
   <div class="pb-12">
       <h1 class="text-8xl font-bold">{city}</h1>
   </div>
+  <div>
     {weather ? (
       <div>
         <Temperature current={weather.currentTemperature} min={weather.temperatureMin} max={weather.temperatureMax} />
@@ -32,4 +33,5 @@ const weatherDescription = weatherTextMap[weather.weatherCode] ?? "❓ Unknown";
     ) : (
       <p>weather not found!</p>
     )}
+  </div>
 </section>

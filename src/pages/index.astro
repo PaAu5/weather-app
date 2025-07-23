@@ -1,26 +1,18 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+import Searcher from '@/components/searcher.astro';
 ---
 
 <Layout title='Weather App'>
 	<div class="flex flex-col justify-center items-center mt-44 mb-24 space-y-3">
 		<h1 class="text-8xl font-bold">Weather App</h1>
-		<h2 class="text-6xl">by Pau Segués Vitutia</h2>
+		<h2 class="text-6xl text-center">by
+			<a href="https://pausegues.netlify.app/" target="_blank" class="text-amber-200 hover:text-[65px]">
+				Pau Segués Vitutia
+			</a>
+		</h2>
 	</div>
 
-	<div class="flex flex-col justify-center items-center">
-		<div class="flex flex-col justify-start items-start">
-			<div class="flex flex-row space-x-4">
-				<input type="text" id="searchInput" placeholder="Escribe para buscar..." class="border-2"/>
-				<button id="searchBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:scale-105">Buscar</button>
-			</div>
-
-			<div class="flex justify-start items-start">
-				<ul id="results" class="flex flex-col space-y-2 font-bold mt-4 
-				[&>li]:border-2 [&>li]:hover:scale-105 [&>li]:text-center [&>li]:px-2"></ul>
-			</div>
-		</div>
-
-		<script src="@/utils/search.ts"></script>
-	</div>
+	<Searcher />
 </Layout>

@@ -2,6 +2,8 @@
 import Layout from "@/layouts/Layout.astro";
 import Weather from "@/sections/weather.astro";
 
+import Header from "@/sections/header.astro";
+
 import { CITIES } from "@/consts/cities";
 
 export async function getStaticPaths() {
@@ -20,5 +22,6 @@ if (!cityData) {
 ---
 
 <Layout title="Weather App">
-    <Weather city={cityData.name} lat={cityData.lat} lon={cityData.lon} />
+  <Header />
+  <Weather city={cityData.name} lat={cityData.lat} lon={cityData.lon} />
 </Layout>
