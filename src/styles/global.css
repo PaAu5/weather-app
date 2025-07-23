@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+
+    /* web colors */
+    --color-charleston-green: #222831;
+    --color-outer-space: #31363F;
+    --color-green-sheen: #76ABAE;
+    --color-bright-gray: #EEEEEE;
+}
