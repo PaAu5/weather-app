@@ -1,9 +1,13 @@
 ---
+import HomeButton from "./home-button.astro"
 ---
 <div class="flex flex-col justify-center items-center">
 	<div class="flex flex-col justify-start items-start">
 		<div class="flex flex-row space-x-4">
-			<input type="text" id="searchInput" placeholder="Escribe para buscar..." 
+
+			<HomeButton href="/" />
+
+			<input type="text" id="searchInput" placeholder="Search city" 
                 class="border-2 rounded-lg text-bright-gray placeholder-bright-gray placeholder:opacity-75
                 focus:outline-none focus:scale-110 px-2 text-xl"
             />
@@ -14,9 +18,9 @@
             </button>
 		</div>
 
-		<div class="flex justify-start items-start">
-			<ul id="results" class="flex flex-col space-y-1 mt-4 text-xl
-			[&>li]:bg-charleston-green #31363F; [&>li]:hover:scale-105 [&>li]:text-center [&>li]:px-4 [&>li]:rounded-lg">
+		<div class="flex justify-center items-center">
+			<ul id="results" class="flex flex-col space-y-1 mt-4 text-xl mb-24
+			[&>li]:bg-charleston-green #31363F; [&>li]:hover:scale-105 [&>li]:text-start [&>li]:px-4 [&>li]:rounded-lg ">
             </ul>
 		</div>
 	</div>

@@ -1,12 +1,8 @@
 ---
 import SearcherLimited from "@/components/searcher-limited.astro";
-import HomeButton from "@/components/home-button.astro";
 ---
-<section class="flex flex-col md:flex-row mt-4 w-full">
-  <div class="flex justify-start items-start mt-4 z-10 mx-12">
-    <HomeButton href="/" />
-  </div>
-  <div class="md:absolute flex justify-center items-center mt-4 w-full">
+<section class="w-full h-full flex justify-center items-center mt-4">
+  <div class="z-10">
     <SearcherLimited />
   </div>
 </section>
