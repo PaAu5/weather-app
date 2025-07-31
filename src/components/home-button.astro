@@ -1,4 +1,6 @@
 ---
+import HomeIcon from '@/assets/HomeIcon.astro';
+
 interface Props {
     href: string;
 }
@@ -6,7 +8,7 @@ interface Props {
 const { href } = Astro.props;
 ---
 <a href={href}
-    class="text-bright-gray px-4 py-2 border-bright-gray border-2 cursor-pointer font-bold text-xl transition duration-400
+    class="text-bright-gray px-4 py-2 border-bright-gray border-2 cursor-pointer transition duration-400
     hover:text-charleston-green hover:bg-bright-gray rounded-lg hover:scale-110">
-    Home
+    <HomeIcon  />
 </a>
